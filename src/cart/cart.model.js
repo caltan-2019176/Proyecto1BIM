@@ -17,7 +17,11 @@ const cartSchema = Schema({
             required: true,
             min: 1
         }
-    }]
+    }],
+    subTotal: { 
+        type: Number,
+        required: true 
+    }
 },{
     versionKey: false
 })

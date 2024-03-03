@@ -47,3 +47,50 @@ export const checkUpdate = (data, id)=>{
     }
     
 }
+
+export const checkUpdateUser = async (data, id) => {
+    if (id) {
+        if (Object.entries(data).length === 0 ||
+            data.password ||
+            data.role) {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+}
+
+export const checkUpdateRole = async (data, id) => {
+    if (id) {
+        if (Object.entries(data).length === 0 ||
+            data.username||
+            data.nameUser||
+            data.email ||
+            data.password ||
+            data.phone ||
+            data.surname) {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+}
+
+export const checkUpdatePassword = async (data, id) => {
+    if (id) {
+        if (Object.entries(data).length === 0 ||
+            data.username||
+            data.nameUser||
+            data.email ||
+            data.role ||
+            data.phone ||
+            data.name) {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+}
