@@ -45,6 +45,8 @@ export const register = async(req, res) =>{
         console.log(data)
         //encriptar la password
         data.password = await encrypt(data.password)
+        //dar el role
+        data.role = 'CLIENT'
         //Guardar la información en la BD
         let user = new User(data)
         await user.save()
@@ -82,6 +84,8 @@ export const login = async (req, res) => {
                 }
                 let token = await generatejwt(loggedUser)
                 return res.send({message: `Welcome ${loggedUser.nameUser}`, loggedUser, token})
+            }else{
+                return res.status(404).send({message: 'Password incorrect'})
             }
         }
     } catch (error) {
@@ -116,9 +120,21 @@ export const deleteUser = async (req, res)=>{
     try {
         let data = req.body
         data._id = req.user._id
-        let deletedAccount =  await User.findOneAndDelete({_id: data._id})
-        if(!deletedAccount) return res.status(404).send({message: 'Account not found and not deleted'})
-        return res.send({message: `Account ${deletedAccount.username} deleted successfully`})
+        if (data.password) {
+            let user = await User.findById(data._id);
+            if (!user) return res.status(401).send({ message: 'User not found' })
+            let isPasswordValid = await checkPassword(data.password, user.password)
+            if (!isPasswordValid) {
+                return res.status(400).send({ message: 'The password is not correct' })
+            } else {
+                let deletedAccount = await User.findOneAndDelete({ _id: data._id })
+                if (!deletedAccount) return res.status(404).send({ message: 'Account not found and not deleted' })
+                return res.send({ message: `Account ${deletedAccount.username} deleted successfully` })
+            }
+        }else{
+            return res.status(400).send({message: 'you have to introducing your password to delete your acount'})
+        }
+        
     } catch (error) {
         console.error(error)
         return res.status(500).send({message: 'Error deleting account'})

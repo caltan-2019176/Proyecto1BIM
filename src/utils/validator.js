@@ -48,6 +48,19 @@ export const checkUpdate = (data, id)=>{
     
 }
 
+export const checkUpdateProduct = async (data, id) => {
+    if (id) {
+        if (Object.entries(data).length === 0 ||
+            data.brand ||
+            data.category) {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+}
+
 export const checkUpdateUser = async (data, id) => {
     if (id) {
         if (Object.entries(data).length === 0 ||
@@ -60,7 +73,16 @@ export const checkUpdateUser = async (data, id) => {
         return false
     }
 }
-
+export const checkUpdateCategory = async (data, id) => {
+    if (id) {
+        if (Object.entries(data).length === 0 ) {
+            return false
+        }
+        return true
+    } else {
+        return false
+    }
+}
 export const checkUpdateRole = async (data, id) => {
     if (id) {
         if (Object.entries(data).length === 0 ||

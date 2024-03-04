@@ -12,7 +12,7 @@ const categorySchema = Schema({
     }
 
 }, {
-    versionKey: false //desactivar el _v (versión del documento)
+    versionKey: false 
 })
 
 export default model('category', categorySchema)
