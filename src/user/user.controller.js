@@ -99,6 +99,7 @@ export const updateUser = async(req, res)=>{
     try {
         let data = req.body
         data._id = req.user._id
+        console.log(data._id)
         let update =  await checkUpdateUser(data , data._id)
         if(!update) return res.status(400).send({message: 'Have submitted some data that cannot be update'})
         let updateUser = await User.findOneAndUpdate(

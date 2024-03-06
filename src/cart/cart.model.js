@@ -18,7 +18,7 @@ const cartSchema = Schema({
             min: 1
         }
     }],
-    subTotal: { 
+    total: { 
         type: Number,
         required: true 
     }
