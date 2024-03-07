@@ -29,7 +29,7 @@ const productSchema = Schema({
 
     }, 
 }, {
-    versionKey: false //desactivar el _v (versión del documento)
+    versionKey: false 
 })
 
 export default model('product', productSchema)

@@ -1,9 +1,11 @@
 'use strict'
 import { Router } from "express"
-import { createBill, test } from "./bill.controller.js"
+import {  test, updateBill, searchBillID } from "./bill.controller.js"
+import {validateJwt, isAdmin} from '../middlewares/validate-jwt.js'
 
 const api = Router()
 api.get('/test', test)
-api.post('/createBill', createBill)
+api.put('/updateBill/:id/:itemId', [validateJwt, isAdmin], updateBill)
+api.get('/findBill', [validateJwt, isAdmin], searchBillID)
 
 export default api

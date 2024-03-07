@@ -3,6 +3,7 @@
 
 import Product from './product.model.js'
 import Category from '../category/category.model.js'
+import Bill from '../bill/bill.model.js'
 import { checkUpdateProduct } from '../utils/validator.js'
 
 export const test = (req, res) => {
@@ -130,5 +131,39 @@ export const getProductsCategory = async (req, res) =>{
         console.error(error)
         return res.status(500).send({message: 'fail get products'})
 
+    }
+}
+
+
+export const sellingProducts = async (req, res) => {
+    try {
+        let bestSellingProducts = await Bill.aggregate([
+            { $unwind: "$items" },
+            // Agrupamos por el ID del producto y sumamos la cantidad vendida
+            {
+                $group: {
+                    _id: "$items.product",
+                    totalQuantity: { $sum: "$items.quantity" }
+                }
+            },
+            { $sort: { totalQuantity: -1 } },
+            { $limit: 10 }
+        ]);
+
+        let productsDetails = await Product.find({ _id: { $in: bestSellingProducts.map(item => item._id) } });
+
+        // Combinamos la información de los productos más vendidos y sus detalles
+        let bestSellingProductsDetails = bestSellingProducts.map(item => {
+            let productDetail = productsDetails.find(product => product._id.toString() === item._id.toString());
+            return {
+                product: productDetail,
+                totalQuantity: item.totalQuantity
+            };
+        });
+
+        return res.send(bestSellingProductsDetails);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({ message: 'Error retrieving best selling products', error: error });
     }
 }

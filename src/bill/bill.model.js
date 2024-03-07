@@ -11,7 +11,7 @@ const billSchema = Schema({
     items: [{
         product: {
             type: Schema.Types.ObjectId,
-            ref: 'Product',
+            ref: 'product',
             required: true
         },
         quantity: {

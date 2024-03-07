@@ -116,3 +116,13 @@ export const checkUpdatePassword = async (data, id) => {
         return false
     }
 }
+
+export const checkUpdateBill = async (data) => {
+
+    if (Object.entries(data).length === 0 ||
+        data.product ||
+        data.quantity) {
+        return true
+    }
+    return false
+}

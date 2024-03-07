@@ -3,6 +3,7 @@
 import User from './user.model.js'
 import { encrypt, checkPassword, checkUpdatePassword, checkUpdateRole, checkUpdateUser} from '../utils/validator.js'
 import {generatejwt} from '../utils/jwt.js'
+import {searchBill} from '../bill/bill.controller.js'
 
 export const test = (req, res) => {
     console.log('test is running on User')
@@ -83,7 +84,8 @@ export const login = async (req, res) => {
                     role: loginUs.role 
                 }
                 let token = await generatejwt(loggedUser)
-                return res.send({message: `Welcome ${loggedUser.nameUser}`, loggedUser, token})
+                let bills = await searchBill(loginUs._id)
+                return res.send({message: `Welcome ${loggedUser.nameUser}`, loggedUser, token, bills})
             }else{
                 return res.status(404).send({message: 'Password incorrect'})
             }

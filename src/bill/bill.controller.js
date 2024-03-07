@@ -1,128 +1,164 @@
 'use strict'
 
 import Bill from './bill.model.js'
-import User from '../user/user.model.js'
 import Product from '../product/product.model.js'
-import { checkUpdate } from '../utils/validator.js'
+import User from '../user/user.model.js'
+import {checkUpdateBill} from '../utils/validator.js'
 
 export const test = (req, res) => {
     console.log('test is running on Bill')
     return res.send({ message: 'test of Bill ir running correct' })
 }
 
-export const createBill = async (req, res) => {
+export const updateBill = async (req, res) => {
     try {
-        let { userBill, products } = req.body
-        //let id = '65d83cb7931b7cd15cbac83a'
-        // Verificar si el usuario existe
-        let user = await User.findById(userBill)
-        if (!user) {
-            return res.status(404).send({ message: `User not found ${userBill}` })
-        }
+        let { id, itemId } = req.params
+        let { product, quantity } = req.body
 
-        // Verificar y actualizar el stock de los productos
-        for (const key in products) {
-            if (Object.hasOwnProperty.call(products, key)) {
-                const { productId, amount } = products[key];
-                const existingProduct = await Product.findById(productId);
-                if (!existingProduct) {
-                    return res.status(404).json({ message: `Product with ID ${productId} not found` });
-                }
-                if (amount > existingProduct.stock) {
-                    return res.status(400).json({ message: `Insufficient stock for product ${existingProduct.nameProduct}` });
-                }
-                existingProduct.stock -= amount;
-                await existingProduct.save();
+        if (!product && quantity == null) return res.status(400).send({ message: 'Product or quantity is required' })
+        
+        let bill = await Bill.findById(id)
+        if (!bill) return res.status(404).send({ message: 'Bill not found' })
+    
+        let itemToUpdate = bill.items.find(item => item._id.toString() === itemId)
+        if (!itemToUpdate) return res.status(404).send({ message: 'Item not found in the bill' })
+        
+        // Actualizar el producto
+        if (product) {
+            let productInfo = await Product.findById(product)
+            if (!productInfo) return res.status(404).send({ message: 'Product not found' })
+            
+            itemToUpdate.product = product
+            let oldQuantity = itemToUpdate.quantity || 0 
+            let oldUnitPrice = itemToUpdate.price || productInfo.priceProduct || 0  
+            
+            
+            if (quantity != null && (productInfo.stock - quantity + oldQuantity) < 0) return res.status(400).send({ message: 'Insufficient stock' })
+            
+
+            let quantityDifference = quantity - oldQuantity
+            bill.totalAmount += quantityDifference * oldUnitPrice
+
+            if (quantity != null) {
+                productInfo.stock -= quantityDifference
+                await productInfo.save()
             }
         }
 
-        // Calcular el total de la factura
-        console.log('Products:', products);
-        console.log('Type of products:', typeof products);
+        if (quantity != null) {
+            let oldQuantity = itemToUpdate.quantity || 0
+            let quantityDifference = quantity - oldQuantity
+            itemToUpdate.quantity = quantity
+            
+            let itemPrice = itemToUpdate.price || 0
+            bill.totalAmount += quantityDifference * itemPrice
 
-        if (products && typeof products === 'object' && !Array.isArray(products)) {
-            const totalBill = Object.values(products).reduce((total, product) => {
-                let { amount, unitePrice } = product;
-                return total + (amount * unitePrice);
-            }, 0);
+            // Asegurar que no haya stock negativo
+            let productInfo = await Product.findById(itemToUpdate.product)
+            if (!productInfo) return res.status(404).send({ message: 'Product not found' })
+            if ((productInfo.stock - quantityDifference) < 0) {
+                return res.status(400).send({ message: 'Insufficient stock' })
+            }
+            productInfo.stock -= quantityDifference
+            await productInfo.save()
         }
-        // Crear la factura
-        const newBill = new Bill({
-            userBill,
-            products: products.map(product => ({
-                product: product.productId,
-                amount: product.amount,
-                unitePrice: product.unitePrice,
-                subTotal: product.amount * product.unitePrice
-            })),
-            totalBill
-        })
 
-        // Guardar la factura en la base de datos
-        await newBill.save()
+        await bill.save()
 
-        // Respuesta exitosa
-        return res.send({ message: 'Bill created successfully', bill: newBill })
+        return res.send({ message: 'Item updated successfully', bill })
     } catch (error) {
         console.error(error)
-        return res.status(500).send({ message: 'Failed to create bill' })
+        return res.status(500).send({ message: 'Error updating item' })
+    }
+}
+
+export const searchBill = async(id) =>{
+    try {
+        let user = id
+        let billFound = await Bill.find({user}).populate('user',  ['username']).populate('items.product',  ['nameProduct'])
+        if(!billFound) return console.log('not found Bills')
+        return billFound
+
+
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+export const searchBillID = async(req, res) =>{
+    try {
+        let {username} = req.body
+        let userS = await User.findOne({username: username})
+        if(!userS) return res.status(404).send({message: 'NOT FOUND User'})
+        let user = userS._id
+        let billFound = await Bill.find({user}).populate('user',  ['username']).populate('items.product',  ['nameProduct'])
+        if(!billFound) return res.status(404).send({message: 'NOT FOUND BILL'})
+
+        return res.send({billFound})
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({message: 'BILL NOT FOUND'})
     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /*
-export const createBill = async (req, res) => {
+export const updateBill = async (req, res) => {
     try {
-        // Desestructurar el body de la solicitud
-        let { userBill , products, totalBill } = req.body;
+        let { id, itemId } = req.params
+        let { product, quantity } = req.body
+
+        if (!product && quantity === undefined) return res.status(400).send({ message: 'Product or quantity is required' })
         
-        // Verificar si el usuario existe
-        const user = await User.findById(userBill);
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
-        }
+        let bill = await Bill.findById(id)
+        if (!bill) return res.status(404).send({ message: 'Bill not found' })
+    
+        let itemToUpdate = bill.items.find(item => item._id.toString() === itemId)
+        if (!itemToUpdate) return res.status(404).send({ message: 'Item not found in the bill' })
         
+        // Actualizar el producto
+        if (product) {
+            let productInfo = await Product.findById(product)
+            if (!productInfo) return res.status(404).send({ message: 'Product not found' })
+            
+            itemToUpdate.product = product
+            itemToUpdate.price = productInfo.priceProduct || productInfo.priceProduct
+            
+            let oldUnitPrice = itemToUpdate.price || productInfo.priceProduct
+            let oldQuantity = itemToUpdate.quantity || productInfo.quantity
+            bill.totalAmount += (itemToUpdate.price - oldUnitPrice) * oldQuantity
 
-        // Verificar y actualizar el stock de los productos
-        for (const productBill of products) {
-            const existProduct = await Product.findById(productBill.product);
-            if (!existProduct) {
-                return res.status(404).send({ message: `Product with ID ${productBill.product} not found` });
+            if (quantity !== undefined) {
+                let quantityDifference = quantity - oldQuantity
+                productInfo.stock -= quantityDifference
+                await productInfo.save()
             }
-            if (productBill.amount > existProduct.stock) {
-                return res.status(400).send({ message: `The amount of ${existProduct.nameProduct} is insufficient` });
-            }
-            existProduct.stock -= productBill.amount;
-            await existProduct.save();
         }
 
-        // Calcular subtotal de cada producto y crear un nuevo arreglo de productos con subtotales
-        const productsWithSubtotal = products.map(product => ({
-            ...product,
-            subTotal: product.amount * product.unitePrice
-        }));
+        if (quantity !== undefined) {
+            let oldQuantity = itemToUpdate.quantity || 0
+            let quantityDifference = quantity - oldQuantity
+            itemToUpdate.quantity = quantity
+            
+            let itemPrice = itemToUpdate.price || 0
+            bill.totalAmount += quantityDifference * itemPrice
+            console.log(itemToUpdate.quantity)
 
-        // Crear la factura
-        const newBill = new Bill({
-            userBill,
-            products: productsWithSubtotal,
-            totalBill
-        });
-        await newBill.save();
-        return res.send({ mensaje: 'New Bill', bill: newBill });
+            let productInfo = await Product.findById(itemToUpdate.product)
+            if (!productInfo) {
+                return res.status(404).send({ message: 'Product not found' })
+            }
+            productInfo.stock -= quantityDifference
+            await productInfo.save()
+        }
 
+        await bill.save()
+
+        return res.send({ message: 'Item updated successfully', bill })
     } catch (error) {
-        console.error(error);
-        res.status(500).send({ mensaje: 'Fail create Bill' });
+        console.error(error)
+        return res.status(500).send({ message: 'Error updating item' })
     }
-}*/
+}
+
+*/
