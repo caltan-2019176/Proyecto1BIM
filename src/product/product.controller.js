@@ -105,11 +105,40 @@ export const searchNameProduct = async (req, res)=>{
 
 }
 
+export const sellingProducts = async (req, res) => {
+    try {
+        let bestSell = await Bill.aggregate([
+            { $unwind: "$items" },
+            {
+                $group: {
+                    _id: "$items.product",
+                    totalQuantity: { $sum: "$items.quantity" }
+                }
+            },
+            { $sort: { totalQuantity: -1 } },
+            { $limit: 10 }
+        ])
+
+        let productsDetail = await Product.find({ _id: { $in: bestSell.map(item => item._id) } })
+
+        let sellingProdA = bestSell.map(item => {
+            let detail = productsDetail.find(product => product._id.toString() === item._id.toString())
+            return {
+                product: detail,
+                totalQuantity: item.totalQuantity
+            }
+        })
+        return res.send(sellingProdA)
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'No found selling products', error: error })
+    }
+}
+
 export const soldOutProduct = async(req, res) =>{
     try {
-        //Buscar productios agotados 
+        
         let product = await Product.find({stock: 0})
-        //validar 
         if(product.length === 0) return res.status(400).send({message: 'No products with stock = 0 found'})
         return res.send({message: 'Products with stock 0 found', product})
 
@@ -135,35 +164,3 @@ export const getProductsCategory = async (req, res) =>{
 }
 
 
-export const sellingProducts = async (req, res) => {
-    try {
-        let bestSellingProducts = await Bill.aggregate([
-            { $unwind: "$items" },
-            // Agrupamos por el ID del producto y sumamos la cantidad vendida
-            {
-                $group: {
-                    _id: "$items.product",
-                    totalQuantity: { $sum: "$items.quantity" }
-                }
-            },
-            { $sort: { totalQuantity: -1 } },
-            { $limit: 10 }
-        ]);
-
-        let productsDetails = await Product.find({ _id: { $in: bestSellingProducts.map(item => item._id) } });
-
-        // Combinamos la información de los productos más vendidos y sus detalles
-        let bestSellingProductsDetails = bestSellingProducts.map(item => {
-            let productDetail = productsDetails.find(product => product._id.toString() === item._id.toString());
-            return {
-                product: productDetail,
-                totalQuantity: item.totalQuantity
-            };
-        });
-
-        return res.send(bestSellingProductsDetails);
-    } catch (error) {
-        console.error(error);
-        return res.status(500).send({ message: 'Error retrieving best selling products', error: error });
-    }
-}

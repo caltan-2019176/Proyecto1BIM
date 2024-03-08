@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "Proyecto1BIM",
-    "dateExported": "2024-03-07T06:07:30.866Z",
+    "dateExported": "2024-03-08T02:44:19.503Z",
     "version": "1.1",
     "folders": [
         {
@@ -9,7 +9,15 @@
             "name": "user",
             "containerId": "d01fb707-47ba-48ef-88be-ed63078ed36e",
             "created": "2024-02-23T04:04:01.692Z",
-            "sortNum": 10000
+            "sortNum": 10000,
+            "settings": {
+                "headers": [
+                    {
+                        "name": "Authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODY0Nzk4LCJleHAiOjE3MDk4NzU1OTh9.gwASe6L5p-XGPkdckXTFcxIsXIR2D3wA1L5_FvJsV7w"
+                    }
+                ]
+            }
         },
         {
             "_id": "f999e73c-7c39-46a4-940c-048c99477621",
@@ -21,7 +29,7 @@
                 "headers": [
                     {
                         "name": "Authorization",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Njg5ODc2LCJleHAiOjE3MDk3MDA2NzZ9.xJvwBX-Ynl7XQONyKtsfMkPHW72U99t_r-MsTsj23YM"
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODYzNTk3LCJleHAiOjE3MDk4NzQzOTd9.LteQ1ziCUUNoLaCOcFGPqVJdiTMMvB-5C8HM8M7roFY"
                     }
                 ]
             }
@@ -36,7 +44,7 @@
                 "headers": [
                     {
                         "name": "Authorization",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTY0OTc0LCJleHAiOjE3MDk1NzU3NzR9.64lkLIxSZpMcw6NctWgeW8c7IyGZyQL7nG20Sew9PKQ"
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODYzNTk3LCJleHAiOjE3MDk4NzQzOTd9.LteQ1ziCUUNoLaCOcFGPqVJdiTMMvB-5C8HM8M7roFY"
                     }
                 ]
             }
@@ -46,7 +54,15 @@
             "name": "bill",
             "containerId": "d01fb707-47ba-48ef-88be-ed63078ed36e",
             "created": "2024-02-23T04:04:12.797Z",
-            "sortNum": 40000
+            "sortNum": 40000,
+            "settings": {
+                "headers": [
+                    {
+                        "name": "Authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODY1MzA3LCJleHAiOjE3MDk4NzYxMDd9.tbFHeJ5CJDDPuAuqvABzYZdvIJQbLk7J9fh25Kf2YTA"
+                    }
+                ]
+            }
         },
         {
             "_id": "d01fb707-47ba-48ef-88be-ed63078ed36e",
@@ -74,7 +90,15 @@
             "name": "Product",
             "containerId": "18e55d57-58b3-407a-9c19-a645604c52f1",
             "created": "2024-03-04T15:24:31.037Z",
-            "sortNum": 90000
+            "sortNum": 90000,
+            "settings": {
+                "headers": [
+                    {
+                        "name": "Authorization",
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5ODY0MjA0LCJleHAiOjE3MDk4NzUwMDR9.zIYwFdGiRYlRHPgwn47PmTCB1ZQLZgEtIVWAkMSGfUg"
+                    }
+                ]
+            }
         },
         {
             "_id": "a51ad3fd-0cf5-40f5-bef1-8614b1b4b87e",
@@ -86,7 +110,7 @@
                 "headers": [
                     {
                         "name": "Authorization",
-                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTk0NjA0LCJleHAiOjE3MDk2MDU0MDR9.tGayDimZ-kU2mIcDGLVjtsUireR_Ev_oZZ8TGybS1O0"
+                        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQ4MWVkNGEyMjFjOTcxOTgzMDBiYzEiLCJ1c2VybmFtZSI6Impjb3J0ZXoiLCJuYW1lVXNlciI6Impvc2UiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5ODY1MTA2LCJleHAiOjE3MDk4NzU5MDZ9.dEnwCD4F74D4XKTXJsT7gi_AYY0BV7q0A8KL0PszkVU"
                     }
                 ]
             }
@@ -164,7 +188,7 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-02-23T04:11:48.945Z",
-            "modified": "2024-03-06T03:32:37.061Z",
+            "modified": "2024-03-08T02:26:37.384Z",
             "headers": [],
             "params": [],
             "body": {
@@ -178,6 +202,11 @@
                     {
                         "name": "password",
                         "value": "12345678"
+                    },
+                    {
+                        "name": "email",
+                        "value": "dalt@gmail.com",
+                        "isDisabled": true
                     }
                 ]
             },
@@ -193,11 +222,12 @@
             "method": "PUT",
             "sortNum": 40000,
             "created": "2024-02-23T04:16:06.906Z",
-            "modified": "2024-03-03T01:47:42.798Z",
+            "modified": "2024-03-08T02:25:31.409Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDNiZGRmMTAzNTFlZDU2YTRkMWQiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NDMwMDUwLCJleHAiOjE3MDk0NDA4NTB9.HnzM-rwhOJJjD_-HR747ItqxeyESFvhwYnWuw8lwrHs"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDNiZGRmMTAzNTFlZDU2YTRkMWQiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NDMwMDUwLCJleHAiOjE3MDk0NDA4NTB9.HnzM-rwhOJJjD_-HR747ItqxeyESFvhwYnWuw8lwrHs",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -215,6 +245,7 @@
                     }
                 ]
             },
+            "reqType": "put",
             "tests": []
         },
         {
@@ -226,11 +257,11 @@
             "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-02-23T04:27:24.133Z",
-            "modified": "2024-03-04T13:56:23.179Z",
+            "modified": "2024-03-08T02:27:36.742Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzYzU5ZjkzMDI4ZTExYjY5YzIyNmUiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYwNTA3LCJleHAiOjE3MDk1NzEzMDd9.TXMnYjKpwwcdtBdfi6wlvcR5IOzf8zNLZRoBD26c6tc"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNzZkMDhiMjkwZDUwMDM0MTU3NjkiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkNMSUVOVCIsImlhdCI6MTcwOTg2NDY4MywiZXhwIjoxNzA5ODc1NDgzfQ.K1HymjtpdS2d9mfx5HF2Mt6IaAR4TKt2zDeqsemnoG8"
                 }
             ],
             "params": [],
@@ -244,6 +275,7 @@
                     }
                 ]
             },
+            "reqType": "del",
             "tests": []
         },
         {
@@ -269,11 +301,12 @@
             "method": "POST",
             "sortNum": 70000,
             "created": "2024-02-23T04:52:35.563Z",
-            "modified": "2024-03-05T03:30:34.564Z",
+            "modified": "2024-03-08T02:09:46.803Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NjA5Mzg1LCJleHAiOjE3MDk2MjAxODV9.7E5xe8HrEuHsIXm3mUMUNMZXBngPS6HeNMWbMBpgFY8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NjA5Mzg1LCJleHAiOjE3MDk2MjAxODV9.7E5xe8HrEuHsIXm3mUMUNMZXBngPS6HeNMWbMBpgFY8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -283,30 +316,31 @@
                 "form": [
                     {
                         "name": "nameProduct",
-                        "value": "Hoddie Karol G 2023"
+                        "value": "Travis Scott tshirt"
                     },
                     {
                         "name": "descriptionProduct",
-                        "value": "Karol g merch 2023"
+                        "value": "Travis Scott t-shirt"
                     },
                     {
                         "name": "priceProduct",
-                        "value": "1000"
+                        "value": "350"
                     },
                     {
                         "name": "brand",
-                        "value": "KarolG2023"
+                        "value": "Ts"
                     },
                     {
                         "name": "stock",
-                        "value": "20"
+                        "value": "32"
                     },
                     {
                         "name": "category",
-                        "value": "65e5ddc84fcca3ab630cea47"
+                        "value": "65ea7321789e41ae6d871990"
                     }
                 ]
             },
+            "reqType": "post",
             "tests": []
         },
         {
@@ -314,15 +348,16 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "6a252b61-64c2-46d0-8a44-1e48ccfa31b2",
             "name": "search",
-            "url": "product/searchProduct/65cef219a153b6b933661689",
+            "url": "product/searchProduct/65ea736a789e41ae6d871994",
             "method": "GET",
             "sortNum": 80000,
             "created": "2024-02-23T04:54:45.782Z",
-            "modified": "2024-03-06T01:53:41.536Z",
+            "modified": "2024-03-08T02:10:15.250Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Njg5ODc2LCJleHAiOjE3MDk3MDA2NzZ9.xJvwBX-Ynl7XQONyKtsfMkPHW72U99t_r-MsTsj23YM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Njg5ODc2LCJleHAiOjE3MDk3MDA2NzZ9.xJvwBX-Ynl7XQONyKtsfMkPHW72U99t_r-MsTsj23YM",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -338,11 +373,12 @@
             "method": "GET",
             "sortNum": 90000,
             "created": "2024-02-23T04:55:30.909Z",
-            "modified": "2024-03-06T02:00:35.080Z",
+            "modified": "2024-03-08T02:10:21.656Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Njg5ODc2LCJleHAiOjE3MDk3MDA2NzZ9.xJvwBX-Ynl7XQONyKtsfMkPHW72U99t_r-MsTsj23YM"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Njg5ODc2LCJleHAiOjE3MDk3MDA2NzZ9.xJvwBX-Ynl7XQONyKtsfMkPHW72U99t_r-MsTsj23YM",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -358,11 +394,12 @@
             "method": "GET",
             "sortNum": 100000,
             "created": "2024-02-23T04:56:10.405Z",
-            "modified": "2024-03-07T05:40:23.320Z",
+            "modified": "2024-03-08T02:10:40.007Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -411,11 +448,12 @@
             "method": "PUT",
             "sortNum": 135000,
             "created": "2024-03-03T01:28:29.505Z",
-            "modified": "2024-03-03T01:40:44.958Z",
+            "modified": "2024-03-08T02:26:14.138Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDNiZGRmMTAzNTFlZDU2YTRkMWQiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NDI5NzA4LCJleHAiOjE3MDk0NDA1MDh9.WPqxssmwoPgCmgFQ3ZSyM5lJdATxCag3iDWUz6x6IkA"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDNiZGRmMTAzNTFlZDU2YTRkMWQiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NDI5NzA4LCJleHAiOjE3MDk0NDA1MDh9.WPqxssmwoPgCmgFQ3ZSyM5lJdATxCag3iDWUz6x6IkA",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -425,14 +463,15 @@
                 "form": [
                     {
                         "name": "newPassword",
-                        "value": "12345678"
+                        "value": "123456789"
                     },
                     {
                         "name": "password",
-                        "value": "1234567891"
+                        "value": "12345678"
                     }
                 ]
             },
+            "reqType": "put",
             "tests": []
         },
         {
@@ -444,11 +483,11 @@
             "method": "POST",
             "sortNum": 140000,
             "created": "2024-02-23T05:57:15.748Z",
-            "modified": "2024-03-04T14:42:23.169Z",
+            "modified": "2024-03-08T02:06:47.610Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYzMjEzLCJleHAiOjE3MDk1NzQwMTN9.5viEr09F15e0DKa5ibxLRzgRinTc9ehL1fmNnaqnrUk"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODYzNTk3LCJleHAiOjE3MDk4NzQzOTd9.LteQ1ziCUUNoLaCOcFGPqVJdiTMMvB-5C8HM8M7roFY"
                 }
             ],
             "params": [],
@@ -458,14 +497,15 @@
                 "form": [
                     {
                         "name": "nameCategory",
-                        "value": "Hoddies"
+                        "value": "T-Shirt"
                     },
                     {
                         "name": "descriptionCategory",
-                        "value": "hoddies varias"
+                        "value": "T-Shirt varias"
                     }
                 ]
             },
+            "reqType": "post",
             "tests": []
         },
         {
@@ -477,14 +517,16 @@
             "method": "GET",
             "sortNum": 150000,
             "created": "2024-02-23T05:58:59.268Z",
-            "modified": "2024-03-04T14:42:47.835Z",
+            "modified": "2024-03-08T02:07:36.014Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYzMjEzLCJleHAiOjE3MDk1NzQwMTN9.5viEr09F15e0DKa5ibxLRzgRinTc9ehL1fmNnaqnrUk"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODYzNTk3LCJleHAiOjE3MDk4NzQzOTd9.LteQ1ziCUUNoLaCOcFGPqVJdiTMMvB-5C8HM8M7roFY",
+                    "isDisabled": true
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
@@ -492,15 +534,16 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "f999e73c-7c39-46a4-940c-048c99477621",
             "name": "updateCategory",
-            "url": "category/updateCategory/65e5ddc84fcca3ab630cea47",
+            "url": "category/updateCategory/65ea72b8789e41ae6d871985",
             "method": "PUT",
             "sortNum": 160000,
             "created": "2024-02-23T05:59:47.484Z",
-            "modified": "2024-03-04T14:44:13.266Z",
+            "modified": "2024-03-08T02:08:02.468Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYzMjEzLCJleHAiOjE3MDk1NzQwMTN9.5viEr09F15e0DKa5ibxLRzgRinTc9ehL1fmNnaqnrUk"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYzMjEzLCJleHAiOjE3MDk1NzQwMTN9.5viEr09F15e0DKa5ibxLRzgRinTc9ehL1fmNnaqnrUk",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -510,10 +553,11 @@
                 "form": [
                     {
                         "name": "descriptionCategory",
-                        "value": "Hoddies for men"
+                        "value": "T-shirt for men"
                     }
                 ]
             },
+            "reqType": "put",
             "tests": []
         },
         {
@@ -521,18 +565,20 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "f999e73c-7c39-46a4-940c-048c99477621",
             "name": "deleteCategory",
-            "url": "category/deleteCategory/65cd9467852757d9a2aeaac6",
+            "url": "category/deleteCategory/65ea7321789e41ae6d871990",
             "method": "DELETE",
             "sortNum": 170000,
             "created": "2024-02-23T06:00:56.317Z",
-            "modified": "2024-03-04T14:44:50.047Z",
+            "modified": "2024-03-08T02:41:54.630Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYzMjEzLCJleHAiOjE3MDk1NzQwMTN9.5viEr09F15e0DKa5ibxLRzgRinTc9ehL1fmNnaqnrUk"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZDMxMGNjNGE3YzE4OTNkOGUwOWEiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NTYzMjEzLCJleHAiOjE3MDk1NzQwMTN9.5viEr09F15e0DKa5ibxLRzgRinTc9ehL1fmNnaqnrUk",
+                    "isDisabled": true
                 }
             ],
             "params": [],
+            "reqType": "del",
             "tests": []
         },
         {
@@ -572,11 +618,12 @@
             "method": "PUT",
             "sortNum": 220000,
             "created": "2024-03-03T01:22:41.277Z",
-            "modified": "2024-03-03T01:25:31.091Z",
+            "modified": "2024-03-08T02:26:23.334Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzY2MxMjUyZWMwODQ5M2I2NDUyZWYiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NDI4Mzc2LCJleHAiOjE3MDk0MzkxNzZ9.xPEYahj-lfdvEjBVcXFPQwdnptyz1hOXqDYnmSH0JMA"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzY2MxMjUyZWMwODQ5M2I2NDUyZWYiLCJ1c2VybmFtZSI6ImRhbHRhbiIsIm5hbWVVc2VyIjoiRGFuaWVsIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NDI4Mzc2LCJleHAiOjE3MDk0MzkxNzZ9.xPEYahj-lfdvEjBVcXFPQwdnptyz1hOXqDYnmSH0JMA",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -590,6 +637,7 @@
                     }
                 ]
             },
+            "reqType": "put",
             "tests": []
         },
         {
@@ -645,7 +693,7 @@
             "method": "POST",
             "sortNum": 240000,
             "created": "2024-03-04T14:14:09.746Z",
-            "modified": "2024-03-07T06:04:05.476Z",
+            "modified": "2024-03-08T02:31:45.448Z",
             "headers": [],
             "params": [],
             "body": {
@@ -654,7 +702,7 @@
                 "form": [
                     {
                         "name": "username",
-                        "value": "caltan"
+                        "value": "jcortez"
                     },
                     {
                         "name": "password",
@@ -765,11 +813,12 @@
             "method": "GET",
             "sortNum": 280000,
             "created": "2024-03-04T15:25:33.524Z",
-            "modified": "2024-03-04T15:27:10.719Z",
+            "modified": "2024-03-08T02:17:08.940Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTY1OTA0LCJleHAiOjE3MDk1NzY3MDR9.FYuN-7UNI4xuFmwtQHYMaw-HnoVUph8tPZbkdSudpN8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTY1OTA0LCJleHAiOjE3MDk1NzY3MDR9.FYuN-7UNI4xuFmwtQHYMaw-HnoVUph8tPZbkdSudpN8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -783,6 +832,7 @@
                     }
                 ]
             },
+            "reqType": "get",
             "tests": []
         },
         {
@@ -794,14 +844,16 @@
             "method": "GET",
             "sortNum": 290000,
             "created": "2024-03-04T16:13:13.512Z",
-            "modified": "2024-03-04T16:13:28.436Z",
+            "modified": "2024-03-08T02:17:14.483Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTY1OTA0LCJleHAiOjE3MDk1NzY3MDR9.FYuN-7UNI4xuFmwtQHYMaw-HnoVUph8tPZbkdSudpN8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTY1OTA0LCJleHAiOjE3MDk1NzY3MDR9.FYuN-7UNI4xuFmwtQHYMaw-HnoVUph8tPZbkdSudpN8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
@@ -813,11 +865,12 @@
             "method": "GET",
             "sortNum": 300000,
             "created": "2024-03-04T16:20:12.938Z",
-            "modified": "2024-03-04T16:21:45.633Z",
+            "modified": "2024-03-08T02:17:20.975Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTY1OTA0LCJleHAiOjE3MDk1NzY3MDR9.FYuN-7UNI4xuFmwtQHYMaw-HnoVUph8tPZbkdSudpN8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1ZTdjNzBhNmJlMDc4OWVkNzJjMDYiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NTY1OTA0LCJleHAiOjE3MDk1NzY3MDR9.FYuN-7UNI4xuFmwtQHYMaw-HnoVUph8tPZbkdSudpN8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -831,22 +884,24 @@
                     }
                 ]
             },
+            "reqType": "get",
             "tests": []
         },
         {
             "_id": "46de1a1f-ac4d-4921-a31e-d94ddba0d6bf",
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "a51ad3fd-0cf5-40f5-bef1-8614b1b4b87e",
-            "name": "cart shopping",
+            "name": "cart",
             "url": "cart/addCart",
             "method": "POST",
             "sortNum": 310000,
             "created": "2024-03-04T23:28:06.266Z",
-            "modified": "2024-03-07T05:18:21.227Z",
+            "modified": "2024-03-08T02:33:15.499Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5NzgzOTcxLCJleHAiOjE3MDk3OTQ3NzF9.uyBcIO8b-cIvPk92r7K5QN-54i3IbdKo1Hu7EFa7aug"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5ODU0Mzk2LCJleHAiOjE3MDk4NjUxOTZ9.5avQZ1IAtNaKdw2aDEVgvenQQGtlL0MxjfNNgY8r8yY",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -856,13 +911,11 @@
                 "form": [
                     {
                         "name": "product",
-                        "value": "65e691da34b15211f9603ebf",
-                        "isDisabled": true
+                        "value": "65ea736a789e41ae6d871994"
                     },
                     {
                         "name": "quantity",
-                        "value": "2",
-                        "isDisabled": true
+                        "value": "1"
                     },
                     {
                         "name": "buy",
@@ -878,15 +931,16 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "6a252b61-64c2-46d0-8a44-1e48ccfa31b2",
             "name": "updateProduct",
-            "url": "product/updateProduct/65cef219a153b6b933661689",
+            "url": "product/updateProduct/65ea736a789e41ae6d871994",
             "method": "PUT",
             "sortNum": 320000,
             "created": "2024-03-06T01:55:17.862Z",
-            "modified": "2024-03-07T05:41:02.387Z",
+            "modified": "2024-03-08T02:11:01.831Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -896,7 +950,7 @@
                 "form": [
                     {
                         "name": "stock",
-                        "value": "25"
+                        "value": "50"
                     }
                 ]
             },
@@ -908,18 +962,20 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "b524011c-3b26-4004-a106-a8dd12df3b93",
             "name": "bestSellingProducts",
-            "url": "product/bestSellingProducts",
+            "url": "product/sellingProducts",
             "method": "GET",
             "sortNum": 330000,
             "created": "2024-03-06T03:20:20.565Z",
-            "modified": "2024-03-06T03:20:46.385Z",
+            "modified": "2024-03-08T02:17:41.022Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5Njk1MjM5LCJleHAiOjE3MDk3MDYwMzl9.L13nPhBO9PIy_-FCFeD9QjjnU-PDciNmW8OxARgfaNI"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5Njk1MjM5LCJleHAiOjE3MDk3MDYwMzl9.L13nPhBO9PIy_-FCFeD9QjjnU-PDciNmW8OxARgfaNI",
+                    "isDisabled": true
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
@@ -931,11 +987,12 @@
             "method": "GET",
             "sortNum": 340000,
             "created": "2024-03-06T03:23:28.666Z",
-            "modified": "2024-03-07T05:55:45.244Z",
+            "modified": "2024-03-08T02:11:06.770Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5Njk1MjM5LCJleHAiOjE3MDk3MDYwMzl9.L13nPhBO9PIy_-FCFeD9QjjnU-PDciNmW8OxARgfaNI"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU2NWEwMjI2NzI4Y2FjMjg5NmI4ZmQiLCJ1c2VybmFtZSI6Imxlc2NvIiwibmFtZVVzZXIiOiJMbGFuZWwiLCJyb2xlIjoiQ0xJRU5UIiwiaWF0IjoxNzA5Njk1MjM5LCJleHAiOjE3MDk3MDYwMzl9.L13nPhBO9PIy_-FCFeD9QjjnU-PDciNmW8OxARgfaNI",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -947,15 +1004,16 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "32e1fe9f-30c9-408e-9d90-e3ee466d49c5",
             "name": "updateBill",
-            "url": "bill/updateBill/65e94e1d33e927770b83197e/65e94e1d33e927770b83197f",
+            "url": "bill/updateBill/65ea78eb8b290d50034157f5/65ea78eb8b290d50034157f7",
             "method": "PUT",
             "sortNum": 350000,
             "created": "2024-03-06T03:30:45.060Z",
-            "modified": "2024-03-07T05:41:44.453Z",
+            "modified": "2024-03-08T02:37:02.725Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5ODYxOTUzLCJleHAiOjE3MDk4NzI3NTN9.s77LVKHZXo6_Ngw8K68FJgXIyKj1XlXx7NjzUs5Az50",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -965,7 +1023,7 @@
                 "form": [
                     {
                         "name": "product",
-                        "value": "65cef219a153b6b933661689"
+                        "value": "65ea736a789e41ae6d871994"
                     },
                     {
                         "name": "quantity",
@@ -981,18 +1039,20 @@
             "colId": "ab550ee1-b8d1-4634-ab21-bf5bcb46b4e3",
             "containerId": "32e1fe9f-30c9-408e-9d90-e3ee466d49c5",
             "name": "getPDF",
-            "url": "cart/pdf/65e93c56bfbdee72d19d5035",
+            "url": "cart/pdf/65e693e89de42c925b61e030",
             "method": "GET",
             "sortNum": 360000,
             "created": "2024-03-07T04:59:40.447Z",
-            "modified": "2024-03-07T05:00:42.666Z",
+            "modified": "2024-03-08T02:37:40.728Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5Nzg3NjM0LCJleHAiOjE3MDk3OTg0MzR9.-eT3Kw38Essa1B4xv-kzKvbxX8QTRQyQQe8_0xDAYw8",
+                    "isDisabled": true
                 }
             ],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
@@ -1004,11 +1064,12 @@
             "method": "GET",
             "sortNum": 370000,
             "created": "2024-03-07T06:00:58.163Z",
-            "modified": "2024-03-07T06:04:19.375Z",
+            "modified": "2024-03-08T02:39:43.323Z",
             "headers": [
                 {
                     "name": "Authorization",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NzkxNDQ1LCJleHAiOjE3MDk4MDIyNDV9.9BD-0xcmdtAG_u2VFVq7xT3v_-eKuyqym-GApRaWNkA"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU3Y2MwOTljOTEyMmUyZmE3MTBkN2EiLCJ1c2VybmFtZSI6ImNhbHRhbiIsIm5hbWVVc2VyIjoiQ2FybG9zIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzA5NzkxNDQ1LCJleHAiOjE3MDk4MDIyNDV9.9BD-0xcmdtAG_u2VFVq7xT3v_-eKuyqym-GApRaWNkA",
+                    "isDisabled": true
                 }
             ],
             "params": [],
@@ -1018,10 +1079,11 @@
                 "form": [
                     {
                         "name": "username",
-                        "value": "lesco"
+                        "value": "jcortez"
                     }
                 ]
             },
+            "reqType": "get",
             "tests": []
         }
     ],

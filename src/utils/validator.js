@@ -126,3 +126,24 @@ export const checkUpdateBill = async (data) => {
     }
     return false
 }
+
+export const checkUpdateBillF = async (product, quantity) => {
+
+    if (product ||
+        quantity ||
+        quantity != null) {
+        return true
+    }
+    return false
+}
+
+export const checkCart = async (data, quantity, stock ) => {
+
+    if (!data  || 
+        stock === 0 ||
+        quantity > stock) {
+        return false
+        
+    }
+    return true
+}

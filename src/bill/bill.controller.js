@@ -3,7 +3,10 @@
 import Bill from './bill.model.js'
 import Product from '../product/product.model.js'
 import User from '../user/user.model.js'
-import {checkUpdateBill} from '../utils/validator.js'
+import {checkUpdateBillF} from '../utils/validator.js'
+import PDFDocument from 'pdfkit'
+import fs from 'fs'
+
 
 export const test = (req, res) => {
     console.log('test is running on Bill')
@@ -15,7 +18,8 @@ export const updateBill = async (req, res) => {
         let { id, itemId } = req.params
         let { product, quantity } = req.body
 
-        if (!product && quantity == null) return res.status(400).send({ message: 'Product or quantity is required' })
+        let validate = await checkUpdateBillF(product, quantity)
+        if(!validate) return res.status(400).send({ message: 'Product or quantity is required' })
         
         let bill = await Bill.findById(id)
         if (!bill) return res.status(404).send({ message: 'Bill not found' })
@@ -23,49 +27,34 @@ export const updateBill = async (req, res) => {
         let itemToUpdate = bill.items.find(item => item._id.toString() === itemId)
         if (!itemToUpdate) return res.status(404).send({ message: 'Item not found in the bill' })
         
-        // Actualizar el producto
         if (product) {
-            let productInfo = await Product.findById(product)
-            if (!productInfo) return res.status(404).send({ message: 'Product not found' })
-            
-            itemToUpdate.product = product
-            let oldQuantity = itemToUpdate.quantity || 0 
-            let oldUnitPrice = itemToUpdate.price || productInfo.priceProduct || 0  
-            
-            
-            if (quantity != null && (productInfo.stock - quantity + oldQuantity) < 0) return res.status(400).send({ message: 'Insufficient stock' })
-            
-
-            let quantityDifference = quantity - oldQuantity
-            bill.totalAmount += quantityDifference * oldUnitPrice
-
-            if (quantity != null) {
-                productInfo.stock -= quantityDifference
-                await productInfo.save()
+            let productInfo = await Product.findById(product);
+            if (!productInfo) {
+                return res.status(404).send({ message: 'Product not found' });
             }
+            
+            let oldQuantity = itemToUpdate.quantity || 0;
+            let oldUnitPrice = itemToUpdate.price || productInfo.priceProduct || 0;
+
+            // Calcular la diferencia de cantidad
+            let quantityDifference = quantity - oldQuantity;
+
+            if (quantityDifference > 0 && productInfo.stock < quantityDifference) return res.status(400).send({ message: 'Insufficient stock' });
+            
+            // Actualizar el precio del artículo en la factura
+            itemToUpdate.price = productInfo.priceProduct || 0;
+            itemToUpdate.quantity = quantity;
+            // Actualizar el totalAmount de la factura
+            bill.totalAmount += quantityDifference * oldUnitPrice;
+
+            productInfo.stock -= quantityDifference;
+            await productInfo.save();
         }
 
-        if (quantity != null) {
-            let oldQuantity = itemToUpdate.quantity || 0
-            let quantityDifference = quantity - oldQuantity
-            itemToUpdate.quantity = quantity
-            
-            let itemPrice = itemToUpdate.price || 0
-            bill.totalAmount += quantityDifference * itemPrice
+        await bill.save();
+        await generatePDFUpdated(bill)
 
-            // Asegurar que no haya stock negativo
-            let productInfo = await Product.findById(itemToUpdate.product)
-            if (!productInfo) return res.status(404).send({ message: 'Product not found' })
-            if ((productInfo.stock - quantityDifference) < 0) {
-                return res.status(400).send({ message: 'Insufficient stock' })
-            }
-            productInfo.stock -= quantityDifference
-            await productInfo.save()
-        }
-
-        await bill.save()
-
-        return res.send({ message: 'Item updated successfully', bill })
+        return res.send({ message: 'Item updated successfully', bill });
     } catch (error) {
         console.error(error)
         return res.status(500).send({ message: 'Error updating item' })
@@ -101,64 +90,33 @@ export const searchBillID = async(req, res) =>{
     }
 }
 
-
-/*
-export const updateBill = async (req, res) => {
+export const generatePDFUpdated = async (id) => {
     try {
-        let { id, itemId } = req.params
-        let { product, quantity } = req.body
 
-        if (!product && quantity === undefined) return res.status(400).send({ message: 'Product or quantity is required' })
-        
-        let bill = await Bill.findById(id)
-        if (!bill) return res.status(404).send({ message: 'Bill not found' })
-    
-        let itemToUpdate = bill.items.find(item => item._id.toString() === itemId)
-        if (!itemToUpdate) return res.status(404).send({ message: 'Item not found in the bill' })
-        
-        // Actualizar el producto
-        if (product) {
-            let productInfo = await Product.findById(product)
-            if (!productInfo) return res.status(404).send({ message: 'Product not found' })
-            
-            itemToUpdate.product = product
-            itemToUpdate.price = productInfo.priceProduct || productInfo.priceProduct
-            
-            let oldUnitPrice = itemToUpdate.price || productInfo.priceProduct
-            let oldQuantity = itemToUpdate.quantity || productInfo.quantity
-            bill.totalAmount += (itemToUpdate.price - oldUnitPrice) * oldQuantity
+        let bill = await Bill.findOne({_id: id}).populate('user').populate('items.product')
+        let doc = new PDFDocument()
+        let dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+        let formattedDate = bill.date.toLocaleDateString('es-ES', dateOptions)
+        doc.fontSize(20).text('Bill Kinal Sales', { align: 'center' }).moveDown()
 
-            if (quantity !== undefined) {
-                let quantityDifference = quantity - oldQuantity
-                productInfo.stock -= quantityDifference
-                await productInfo.save()
-            }
+        doc.fontSize(14).text(`Bill No.: ${bill._id}`, { align: 'left' }).moveDown()
+        doc.fontSize(14).text(`People: ${bill.user.nameUser} ${bill.user.surname}`, { align: 'left' }).moveDown()
+        doc.fontSize(14).text(`User: ${bill.user.username}`, { align: 'left' }).moveDown()
+        doc.fontSize(14).text(`Date: ${formattedDate}`, { align: 'left' }).moveDown()
+
+        doc.fontSize(16).text('Items:', { align: 'left' }).moveDown()
+        for (let item of bill.items) {
+            doc.fontSize(14).text(`Product: ${item.product.nameProduct}, Quantity: ${item.quantity}, Price: ${item.price}`, { align: 'left' }).moveDown()
         }
+        doc.fontSize(14).text(`Total Amount: ${bill.totalAmount}`, { align: 'left' }).moveDown()
+ 
+        let pdfPath = `UpdateBill_${bill._id}_${bill.user.username}.pdf`
+        doc.pipe(fs.createWriteStream(pdfPath))
+        doc.end()
 
-        if (quantity !== undefined) {
-            let oldQuantity = itemToUpdate.quantity || 0
-            let quantityDifference = quantity - oldQuantity
-            itemToUpdate.quantity = quantity
-            
-            let itemPrice = itemToUpdate.price || 0
-            bill.totalAmount += quantityDifference * itemPrice
-            console.log(itemToUpdate.quantity)
-
-            let productInfo = await Product.findById(itemToUpdate.product)
-            if (!productInfo) {
-                return res.status(404).send({ message: 'Product not found' })
-            }
-            productInfo.stock -= quantityDifference
-            await productInfo.save()
-        }
-
-        await bill.save()
-
-        return res.send({ message: 'Item updated successfully', bill })
+        return pdfPath
     } catch (error) {
-        console.error(error)
-        return res.status(500).send({ message: 'Error updating item' })
+        console.error('Error generating invoice PDF:', error)
     }
 }
 
-*/
