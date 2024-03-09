@@ -208,28 +208,41 @@ export const updatePassword = async(req, res)=>{
 
 }
 
-/*export const updateUser = async (req, res) =>{
+export const deleteById = async (req, res) => {
     try {
-        let {id} = req.params 
-        let data = req.body 
-        let update =  checkUpdate(data, false)
+        let { id } = req.params
+        let user = await User.findById(id);
+        if (!user) return res.status(401).send({ message: 'User not found' })
+
+        let deletedAccount = await User.findOneAndDelete({ _id: id })
+        if (!deletedAccount) return res.status(404).send({ message: 'Account not found and not deleted' })
+        return res.send({ message: `Account ${deletedAccount.username} deleted successfully` })
+
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'Error deleting account' })
+    }
+
+}
+
+export const updateById = async(req, res)=>{
+    try {
+        let data = req.body
+        let {id} = req.params
+        let update =  await checkUpdateUser(data , id)
         if(!update) return res.status(400).send({message: 'Have submitted some data that cannot be update'})
-        //validar los permisos
-        //Actualizar
         let updateUser = await User.findOneAndUpdate(
             { _id: id },
             data,
             {new: true} 
         )
-        //Validar la actualización 
         if (!updateUser) return res.status(401).send({ message: 'user not found' })
-        //responder al usuario
         return res.send({ message: 'user update', updateUser })
-
     } catch (error) {
         console.error(error)
         if(error.keyValue.username) return res.status(400).send({message: `username ${error.keyValue.username} is alredy taken ` })
         return res.status(500).send({ message: 'Error updating' })
-        
     }
-}*/
+
+}
+

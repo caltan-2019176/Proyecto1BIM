@@ -21,7 +21,7 @@ export const updateBill = async (req, res) => {
         let validate = await checkUpdateBillF(product, quantity)
         if(!validate) return res.status(400).send({ message: 'Product or quantity is required' })
         
-        let bill = await Bill.findById(id)
+        let bill = await Bill.findById(id).populate('user',  ['username']).populate('items.product',['nameProduct', 'priceProduct']);
         if (!bill) return res.status(404).send({ message: 'Bill not found' })
     
         let itemToUpdate = bill.items.find(item => item._id.toString() === itemId)
@@ -64,7 +64,7 @@ export const updateBill = async (req, res) => {
 export const searchBill = async(id) =>{
     try {
         let user = id
-        let billFound = await Bill.find({user}).populate('user',  ['username']).populate('items.product',  ['nameProduct'])
+        let billFound = await Bill.find({user}).populate('user',  ['username']).populate('items.product',['nameProduct', 'priceProduct'])
         if(!billFound) return console.log('not found Bills')
         return billFound
 
@@ -94,26 +94,38 @@ export const generatePDFUpdated = async (id) => {
     try {
 
         let bill = await Bill.findOne({_id: id}).populate('user').populate('items.product')
+        
+        if (!bill)  throw new Error('Invoice not found')
+        
+
         let doc = new PDFDocument()
         let dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
         let formattedDate = bill.date.toLocaleDateString('es-ES', dateOptions)
-        doc.fontSize(20).text('Bill Kinal Sales', { align: 'center' }).moveDown()
 
-        doc.fontSize(14).text(`Bill No.: ${bill._id}`, { align: 'left' }).moveDown()
-        doc.fontSize(14).text(`People: ${bill.user.nameUser} ${bill.user.surname}`, { align: 'left' }).moveDown()
-        doc.fontSize(14).text(`User: ${bill.user.username}`, { align: 'left' }).moveDown()
-        doc.fontSize(14).text(`Date: ${formattedDate}`, { align: 'left' }).moveDown()
 
-        doc.fontSize(16).text('Items:', { align: 'left' }).moveDown()
+        doc.font('Helvetica-Bold').fontSize(20).text('Factura de Venta', { align: 'center' }).moveDown(0.5)
+        doc.font('Helvetica').fontSize(14)
+
+    
+        doc.text(`Número de Factura: ${bill._id}`, { align: 'left' })
+        doc.text(`Cliente: ${bill.user.nameUser} ${bill.user.surname}`, { align: 'left' })
+        doc.text(`Usuario: ${bill.user.username}`, { align: 'left' })
+        doc.text(`Fecha: ${formattedDate}`, { align: 'left' }).moveDown(1)
+        doc.font('Helvetica-Bold').fontSize(16).text('Productos:', { align: 'left' }).moveDown(0.5)
+        doc.font('Helvetica').fontSize(14)
         for (let item of bill.items) {
-            doc.fontSize(14).text(`Product: ${item.product.nameProduct}, Quantity: ${item.quantity}, Price: ${item.price}`, { align: 'left' }).moveDown()
+            doc.text(`Producto: ${item.product.nameProduct}`, { continued: true }).text(`Cantidad: ${item.quantity}`, { align: 'right' })
+            doc.text(`Precio: ${item.price}`, { align: 'right' })
+            doc.moveDown(0.5)
         }
-        doc.fontSize(14).text(`Total Amount: ${bill.totalAmount}`, { align: 'left' }).moveDown()
- 
-        let pdfPath = `UpdateBill_${bill._id}_${bill.user.username}.pdf`
+
+        doc.font('Helvetica-Bold').fontSize(16).text(`Total: ${bill.totalAmount}`, { align: 'right' }).moveDown(1)
+
+        
+        let pdfPath = `UpdatedBill_${bill._id}_${bill.user.username}.pdf`
+
         doc.pipe(fs.createWriteStream(pdfPath))
         doc.end()
-
         return pdfPath
     } catch (error) {
         console.error('Error generating invoice PDF:', error)

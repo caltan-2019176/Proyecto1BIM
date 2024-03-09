@@ -138,7 +138,7 @@ export const sellingProducts = async (req, res) => {
 export const soldOutProduct = async(req, res) =>{
     try {
         
-        let product = await Product.find({stock: 0})
+        let product = await Product.find({stock: 0}).populate('category', ['nameCategory'])
         if(product.length === 0) return res.status(400).send({message: 'No products with stock = 0 found'})
         return res.send({message: 'Products with stock 0 found', product})
 
@@ -163,4 +163,14 @@ export const getProductsCategory = async (req, res) =>{
     }
 }
 
-
+export const getProductsCoincidence = async (req, res) =>{
+    try {
+        let {product} = req.body
+        let products = await Product.find({ nameProduct: {$regex: product, $options: 'i'}}).populate('category', ['nameCategory', 'descriptionCategory'])
+        if(products.length === 0) return res.status(404).send({message: 'product not found'})
+        return res.send({products})
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({message: 'Faild get Producst by coincidence'})
+    }
+}
